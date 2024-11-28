@@ -1,0 +1,13 @@
+
+li{
+  cursor: pointer;
+}
+.active{
+  color: orangered;
+}
+.nav-item{
+  transition: color 0.3s ease;
+}
+.nav-item:hover{
+  color: orangered;
+}
