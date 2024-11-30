@@ -10,7 +10,7 @@ export const cartSlice = createSlice({
     increment: (state, action) => {
       const {id,item} = action.payload;
       if(!state[id]){
-        state[id] = {...item,quantity:0};
+        state[id] = {...item,quantity:1};
       }else{
         state[id].quantity+=1;
       }

@@ -6,7 +6,7 @@ const Home = () => {
   const [resData,setResData] = useState([]);
 
   const fetchData = async()=>{
-    const response = await fetch("http://localhost:5173/restaurant.json")
+    const response = await fetch("./restaurant.json")
     const data = await response.json();
     setResData(data);
   }
@@ -17,8 +17,8 @@ const Home = () => {
 
 
   return (
-    <div className="mx-40 my-10">
-      <h1 className="text-2xl font-semibold my-3">
+    <div>
+      <h1 className="text-xl md:text-2xl font-semibold">
         Restaurants with online food delivery in Gurugram
       </h1> <hr className=" border-[1px] border-gray-700" />
       {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6 "> */}

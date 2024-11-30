@@ -1,6 +1,6 @@
 import { MdCurrencyRupee } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
-import { decrement, increment } from "../Pages/Redux/Slicer";
+import { decrement, increment } from "../Redux/Slicer";
 
 const Menu = ({ res }) => {
   const rest = res.card.card.itemCards;
@@ -22,26 +22,26 @@ const Menu = ({ res }) => {
         return (
           <div
             key={itemId}
-            className="flex justify-between items-center border-b py-8"
+            className="flex justify-between items-center border-b lg:py-8 xs:py-5"
           >
             <div className="flex flex-col">
-              <p className="text-2xl font-semibold">{item.card.info.name}</p>{" "}
-              <p className="flex items-center text-gray-700 text-lg">
+              <p className="lg:text-2xl lg:font-semibold xs:font-medium">{item.card.info.name}</p>{" "}
+              <p className="flex items-center text-gray-700 lg:text-lg">
                 <MdCurrencyRupee />
                 {item.card.info.defaultPrice / 100}
               </p>
             </div>
             <div className="relative text-center">
               <img
-                src={`/images/${item?.card?.info?.imgName}`}
+                src={`./images/${item.card.info.imgName}`}
                 alt={`${item.card.info.imgName}`}
-                className="rounded-lg w-40 h-24"
+                className="rounded-lg lg:w-40 lg:h-24 xs:w-28 xs:h-20"
               />
-              <div className="absolute -inset-4 flex items-end justify-center">
+              <div className="absolute -inset-4 flex items-end justify-center xs:text-xs">
                 <div className="bg-white px-2 py-1 rounded-lg flex items-center gap-2 shadow-lg">
                   {quantity > 0 ? (
                     <button
-                      className="bg-gray-300 px-2 w-10 rounded font-bold"
+                      className="bg-gray-300 px-2 lg:w-10 rounded font-bold"
                       onClick={() => dispatch(decrement(itemId))}
                     >
                       -
@@ -55,7 +55,7 @@ const Menu = ({ res }) => {
                   </span>
 
                   <button
-                    className="bg-gray-300 px-3 w-10 rounded font-bold"
+                    className="bg-gray-300 px-3 lg:w-10 rounded font-bold"
                     onClick={() =>
                       dispatch(increment({ id: itemId, item: itemData }))
                     }

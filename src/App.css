@@ -11,3 +11,7 @@ li{
 .nav-item:hover{
   color: orangered;
 }
+body{
+  padding-top: 6rem;
+  font-family: "Poppins", sans-serif;
+}
