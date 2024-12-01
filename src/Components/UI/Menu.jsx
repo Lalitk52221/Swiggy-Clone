@@ -29,7 +29,7 @@ const Menu = ({ res }) => {
           >
             <div className="flex flex-col">
               <p className="lg:text-2xl lg:font-semibold xs:font-medium">{item.card.info.name}</p>{" "}
-              <p className={`flex items-center ${mode==="dark"?"text-gray-400":""} text-gray-700 lg:text-lg`}>
+              <p className={`flex items-center ${mode==="dark"?"text-gray-200":""} text-gray-700 lg:text-lg`}>
                 <MdCurrencyRupee />
                 {item.card.info.defaultPrice / 100}
               </p>

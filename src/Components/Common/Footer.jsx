@@ -1,7 +1,7 @@
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-8 px-4 md:px-40">
+    <footer className="bg-gray-900 text-white py-8 px-4 md:px-40 border-t-2 border-white mt-5">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         <h1 className='font-bold text-3xl text-center md:text-left'>Food</h1>
         {/* Company Section */}
