@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import Menu from "../UI/Menu";
 import { MdCurrencyRupee } from "react-icons/md";
+import { useSelector } from "react-redux";
 
 const Restaurant = () => {
+  const mode = useSelector((state)=>state.cart.mode)
   const [restaurant, setRestaurant] = useState([]);
   const params = useParams();
   const [menu, setMenu] = useState([]);
@@ -30,8 +32,8 @@ const Restaurant = () => {
 
 
   return (
-    <div className="w-full">
-      <p className="text-gray-600 text-sm -mx-3">
+    <div className="w-full ">
+      <p className={`${mode==="dark"?"text-gray-300":"text-gray-600"} text-sm -mx-3`}>
         Home/Gurugram/{result?.info?.name}
       </p>
       <h1 className="lg:text-3xl md:text-2xl sm:text-xl font-bold py-3">{result?.info?.name}</h1>
@@ -40,8 +42,8 @@ const Restaurant = () => {
         <h1 className="border-b-4 border-white lg:py-3 py-2">Dineout</h1>
       </div>
 
-      <div className="my-2 w-full p-5 pt-0 xs:text-xs md:text-base lg:text-lg bg-white rounded-xl [background:linear-gradient(#fff_-6.71%,_#ebebf2_56.19%,_#dfdfe7_106.56%)]">
-        <div className="w-full bg-white rounded-xl ">
+      <div className={`my-2 w-full p-5 pt-0 xs:text-xs md:text-base lg:text-lg rounded-xl ${mode==="dark"?"":"[background:linear-gradient(#fff_-6.71%,_#ebebf2_56.19%,_#dfdfe7_106.56%)]"}`}>
+        <div className={`w-full ${mode==="dark"?"bg-#08001f border-gray-300 border":"bg-white"} rounded-xl`}>
           <div className="w-full p-4 rounded-t-xl bg-red-200 text-red-700 ">
             <p className="">
               Uh-oh! Outlet is not accepting orders at the moment. They should
@@ -60,7 +62,7 @@ const Restaurant = () => {
       </div>
       {menu.map((res,index)=>(
         <div key={index} className="lg:my-16">
-          <p className="lg:text-2xl font-semibold border-b-2 rounded py-3 border-black w-[50%]">
+          <p className={`lg:text-2xl font-semibold border-b-2 rounded py-3 ${mode==="dark"?"border-white":""} border-black w-[50%]`}>
          <span > {res.card.card.title}</span><span>({res.card.card.itemCards.length})</span>
          </p>
          <Menu res={res}/>

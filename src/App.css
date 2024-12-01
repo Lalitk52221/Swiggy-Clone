@@ -15,3 +15,11 @@ body{
   padding-top: 6rem;
   font-family: "Poppins", sans-serif;
 }
+.dark-mode{
+  background-color: #08001f;
+  color: white;
+}
+.light-mode{
+  background-color: #f7f7f7;
+  color: black;
+}

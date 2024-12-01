@@ -3,8 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { decrement, increment } from "../Redux/Slicer";
 
 const Menu = ({ res }) => {
+  
   const rest = res.card.card.itemCards;
   const cart = useSelector((state) => state.cart);
+  const mode = cart.mode
+  // console.log(mode)
   const dispatch = useDispatch();
 
   return (
@@ -26,7 +29,7 @@ const Menu = ({ res }) => {
           >
             <div className="flex flex-col">
               <p className="lg:text-2xl lg:font-semibold xs:font-medium">{item.card.info.name}</p>{" "}
-              <p className="flex items-center text-gray-700 lg:text-lg">
+              <p className={`flex items-center ${mode==="dark"?"text-gray-400":""} text-gray-700 lg:text-lg`}>
                 <MdCurrencyRupee />
                 {item.card.info.defaultPrice / 100}
               </p>
@@ -35,13 +38,13 @@ const Menu = ({ res }) => {
               <img
                 src={`./images/${item.card.info.imgName}`}
                 alt={`${item.card.info.imgName}`}
-                className="rounded-lg lg:w-40 lg:h-24 xs:w-28 xs:h-20"
+                className="rounded-lg lg:w-40 lg:h-24 xs:w-28 xs:h-20 border"
               />
               <div className="absolute -inset-4 flex items-end justify-center xs:text-xs">
-                <div className="bg-white px-2 py-1 rounded-lg flex items-center gap-2 shadow-lg">
+                <div className={`${mode==="dark"?"bg-[black] ":"bg-white"} px-2 py-1 rounded-lg flex items-center gap-2 shadow-lg`}>
                   {quantity > 0 ? (
                     <button
-                      className="bg-gray-300 px-2 lg:w-10 rounded font-bold"
+                    className={`${mode==="dark"?"text-black bg-gray-300":" bg-gray-300"} px-3 lg:w-10 rounded font-bold`}
                       onClick={() => dispatch(decrement(itemId))}
                     >
                       -
@@ -55,7 +58,7 @@ const Menu = ({ res }) => {
                   </span>
 
                   <button
-                    className="bg-gray-300 px-3 lg:w-10 rounded font-bold"
+                    className={`${mode==="dark"?"text-black bg-gray-300":" bg-gray-300"} px-3 lg:w-10 rounded font-bold`}
                     onClick={() =>
                       dispatch(increment({ id: itemId, item: itemData }))
                     }
