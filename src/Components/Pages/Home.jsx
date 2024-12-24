@@ -26,7 +26,7 @@ const Home = () => {
       {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6 "> */}
       <div className="flex flex-wrap gap-6 p-6 mx-auto justify-center ">
         {resData.map((res,index)=>(
-          <div key={index}>
+          <div key={index} className="hover:scale-105 transition-all">
                
             <Card resData={res}/>
           </div>

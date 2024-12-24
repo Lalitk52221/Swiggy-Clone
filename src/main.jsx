@@ -11,6 +11,7 @@ import Home from "./Components/Pages/Home.jsx";
 import Restaurant from "./Components/Pages/Restaurant.jsx";
 import { Provider } from "react-redux";
 import { store } from "./Components/Redux/Store.js";
+import AddressPage from "./Components/Pages/AddressPage.jsx";
 
 const createRouter = createHashRouter([
   {
@@ -45,6 +46,10 @@ const createRouter = createHashRouter([
         path: "/restaurant/:resId",
         element: <Restaurant />,
       },
+      {
+        path: "/address",
+        element: <AddressPage/>,
+      }
     ],
     errorElement: (
       <h1 className="text-3xl text-center font-bold">Page Not Found</h1>

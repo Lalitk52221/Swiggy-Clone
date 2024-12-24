@@ -2,7 +2,7 @@ import React from 'react'
 
 const Search = () => {
   return (
-    <div className='h-[100vh]'>Search</div>
+    <div className='h-full min-h-screen'>Search</div>
   )
 }
 

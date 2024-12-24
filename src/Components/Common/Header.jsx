@@ -18,7 +18,7 @@ const Header = () => {
     dispatch(toggleMode())
   }
   return (
-    <nav className={`fixed top-0 z-10 ${mode==="dark"?"bg-gray-800 text-gray-100":"bg-white"} flex gap-2 lg:justify-between justify-center md:text-lg text-xs lg:px-40 md:px-15 shadow-md py-3 items-center text-gray-700 w-full `}>
+    <nav className={`fixed top-0 z-10 ${mode==="dark"?"bg-gray-800 text-gray-100":"bg-white text-gray-700"} flex gap-2 lg:justify-between justify-center md:text-lg text-xs lg:px-40 md:px-15 shadow-md py-3 items-center  w-full `}>
       <NavLink to={"/"}>
         {" "}
         <img
@@ -36,7 +36,7 @@ const Header = () => {
         </NavLink>
         <NavLink to={"/search"} className="nav-item">
           <li className="flex items-center gap-1">
-            Search <FaSearch size={12} />
+            Search <FaSearch />
           </li>
         </NavLink>
         <NavLink to={"/logout"} className="nav-item">
